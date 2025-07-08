@@ -2,9 +2,9 @@
 
 ## Dynamic Parking Pricing System
 
-This project addresses the challenge of optimizing urban parking utilization through a **dynamic pricing engine**. Implemented entirely in Google Colab, my solution leverages real-time data and a staged modeling pipeline to ensure prices reflect actual demand, environmental factors, and competition.
+This capstone project during Summer Analytics hosted by IITG addresses the challenge of optimizing urban parking utilization through a **dynamic pricing engine**. Implemented entirely in Google Colab, my solution leverages real-time data and a staged modeling pipeline to ensure prices reflect actual demand, environmental factors, and competition.
 
-## The Solution Approach
+## The Approach
 
 ### 1. Data Handling & Exploration
 
@@ -65,15 +65,37 @@ This project addresses the challenge of optimizing urban parking utilization thr
 |-------------------|----------------------------------------|
 | Programming       | Python 3.x                             |
 | Data Analysis     | pandas, numpy, seaborn, matplotlib     |
-| Machine Learning  | scikit-learn, PyMC, networkx           |
-| Deep Learning     | Custom neural attention (NSTAN)        |
-| Visualization     | matplotlib, seaborn, plotly, bokeh     |
+| Deep Learning     | Custom neural attention (NSTAN)        |  
+| Visualization     | bokeh, matplolib                       |
 | Optimization      | scipy.optimize                         |
 | Real-Time Engine  | Pathway                                |
-| Utilities         | dataclasses, typing, abc, json, hashlib|
 | Platform          | Google Colab                           |
 
-## Architecture Flow (Overview)
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    Start["Data Stream"] --> DataIngestion["Load Data (Sensors, Events, Traffic, Competitor Prices)"]
+    DataIngestion --> FeatureEngineering["Extract Features (Time, Occupancy, Queue, Traffic, Special Events, Vehicle Type)"]
+    FeatureEngineering --> ExploratoryAnalysis["Visualize Trends (Occupancy, Queue, Pricing)"]
+
+    subgraph ModelingLayer["Modeling Pipeline"]
+        direction TB
+        RuleBased["Rule-Based Baseline"]
+        DemandBased["Demand-Based Price Function"]
+        Competitive["Competitive Pricing Model"]
+        Bayesian["Bayesian Inference"]
+        NSTAN["NSTAN (Neurosymbolic Temporal Attention Network)"]
+    end
+
+    ExploratoryAnalysis --> ModelingLayer
+    ModelingLayer --> Optimization["Optimize Prices (Revenue, Utilization, Fairness Constraints)"]
+    Optimization --> Evaluation["Evaluate Metrics (MAE, RMSE, Revenue Simulation)"]
+    Evaluation --> Reporting["Visualize Results (Dashboards, Real-Time Plots)"]
+    Reporting --> Output["Price Recommendations"]
+```
+
+## Architecture Flow (Explanation)
 
 1. **Data Ingestion:** Load and preprocess real-time parking data.
 2. **Feature Engineering:** Extract time, environmental, and vehicle features.
@@ -87,14 +109,7 @@ This project addresses the challenge of optimizing urban parking utilization thr
 6. **Evaluation & Reporting:** Metrics and interactive dashboards.
 7. **Output:** Real-time, explainable price recommendations.
 
-## Project Structure & Usage
-
-- **/notebooks:** Contains all modeling and analysis notebooks.
-- **/src:** Core modules for data processing and modeling.
-- **/data:** Sample dataset.
-- **/reports:** Visualizations and summaries.
-- **requirements.txt:** Lists all dependencies.
-
+## Guide
 **To run:**
 1. Clone the repository.
 2. Import the notebook in Google Colab.
@@ -108,13 +123,11 @@ This approach ensures that the pricing system is robust, interpretable, and resp
 
 ## References 
 - **Pathway User Guide:**  
-  "From Jupyter to Deploy"  
-  [https://pathway.com/developers/user-guide/deployment/from-jupyter-to-deploy/][1]
+  [https://pathway.com/developers/user-guide/deployment/from-jupyter-to-deploy/]
 
 - **Pathway Real-Time App Tutorial:**  
-  "First Real-Time App with Pathway"  
-  [https://pathway.com/developers/user-guide/introduction/first_realtime_app_with_pathway/][1]
+  [https://pathway.com/developers/user-guide/introduction/first_realtime_app_with_pathway/]
 
 - **Summer Analytics 2025 Course:**  
-  [https://www.caciitg.com/sa/course25/][1]
+  [https://www.caciitg.com/sa/course25/]
 
