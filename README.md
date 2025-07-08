@@ -105,3 +105,16 @@ This project addresses the challenge of optimizing urban parking utilization thr
 ## Conclusion
 
 This approach ensures that the pricing system is robust, interpretable, and responsive to real-world fluctuations, all while being fully reproducible in Google Colab. The staged modeling—from rules to neural-symbolic attention—enables both transparency and sophistication in pricing decisions.
+
+## References 
+- **Pathway User Guide:**  
+  "From Jupyter to Deploy"  
+  [https://pathway.com/developers/user-guide/deployment/from-jupyter-to-deploy/][1]
+
+- **Pathway Real-Time App Tutorial:**  
+  "First Real-Time App with Pathway"  
+  [https://pathway.com/developers/user-guide/introduction/first_realtime_app_with_pathway/][1]
+
+- **Summer Analytics 2025 Course:**  
+  [https://www.caciitg.com/sa/course25/][1]
+
