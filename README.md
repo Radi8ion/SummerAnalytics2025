@@ -91,8 +91,7 @@ flowchart TD
     ExploratoryAnalysis --> ModelingLayer
     ModelingLayer --> Optimization["Optimize Prices (Revenue, Utilization, Fairness Constraints)"]
     Optimization --> Evaluation["Evaluate Metrics (MAE, RMSE, Revenue Simulation)"]
-    Evaluation --> Reporting["Visualize Results (Dashboards, Real-Time Plots)"]
-    Reporting --> Output["Price Recommendations"]
+    Evaluation --> Reporting["Realtime Bokeh Visualization"]
 ```
 
 ## Architecture Flow (Explanation)
